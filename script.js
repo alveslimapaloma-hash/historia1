@@ -6,72 +6,71 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Era uma Vez...",
+        enunciado: "Em uma floresta encantada, quem iniciou a aventura?",
         alternativas: [
             {
-                texto: "Uma coruja..",
-                afirmacao: "Uma coruja feliz"
+                texto: "A coruja curiosa",
+                afirmacao: "Uma coruja muito curiosa decidiu explorar a floresta encantada ao lado de seu melhor amigo, o coelho."
             },
             {
-                texto: "Um coelho",
-                afirmacao: "Um coelho saltitante"
+                texto: "O coelho aventureiro",
+                afirmacao: "Um coelho muito aventureiro convidou sua amiga coruja para descobrir os segredos da floresta encantada."
             }
         ]
     },
     {
-        enunciado: "Qual o caminho ele tomou?",
+        enunciado: "Durante a caminhada, eles encontraram dois caminhos. Qual escolheram?",
         alternativas: [
             {
-                texto: "Um montanha de lava",
-                afirmacao: "Caminhou sem rumo até encontrar uma grande montanha"
+                texto: "A trilha das flores brilhantes",
+                afirmacao: "Eles seguiram pela trilha das flores brilhantes, onde borboletas coloridas iluminavam o caminho."
             },
             {
-                texto: "Um deserto",
-                afirmacao: "Caminhou sem direção até chegar num deserto, arido e seco"
+                texto: "A ponte sobre o rio cristalino",
+                afirmacao: "Eles atravessaram uma ponte de madeira sobre um rio cristalino cheio de peixes dourados."
             }
         ]
     },
     {
-        enunciado: "O que ele fez ao chegar em destino?",
+        enunciado: "No meio da floresta apareceu um animal mágico. O que eles fizeram?",
         alternativas: [
             {
-                texto: "procurou por alguém",
-                afirmacao: "olhando em todas as direções, procurando encontrar alguém."
+                texto: "Conversaram com o unicórnio",
+                afirmacao: "Com gentileza, conversaram com um unicórnio mágico, que revelou um mapa secreto da floresta."
             },
             {
-                texto: "Refletiu sozinho",
-                afirmacao: "observando sua volta, viu que não precisava de mais nada."
+                texto: "Ajudaram uma raposa encantada",
+                afirmacao: "Ajudaram uma raposa encantada a encontrar seu lar, ganhando um cristal brilhante como agradecimento."
             }
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Ao chegarem a uma grande árvore encantada, qual desafio aceitaram?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                texto: "Resolver um enigma",
+                afirmacao: "Resolveram um enigma antigo e abriram uma passagem para um jardim repleto de árvores luminosas."
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
+                texto: "Encontrar uma chave dourada",
+                afirmacao: "Procuraram uma chave dourada escondida entre as raízes e descobriram um baú cheio de sementes mágicas."
             }
         ]
     },
     {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
+        enunciado: "Como terminou a aventura da coruja e do coelho?",
         alternativas: [
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
+                texto: "Compartilharam a descoberta com todos os animais",
+                afirmacao: "Eles dividiram suas descobertas com todos os animais da floresta, mostrando que a amizade e a cooperação tornam qualquer aventura inesquecível."
             },
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
+                texto: "Plantaram as sementes mágicas",
+                afirmacao: "Eles plantaram as sementes mágicas, fazendo nascer uma nova floresta encantada e aprendendo que coragem e amizade podem transformar o mundo."
             }
         ]
     },
 ];
-
 
 let atual = 0;
 let perguntaAtual;
@@ -88,8 +87,8 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
@@ -105,7 +104,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em lugar qualquer...";
+    caixaPerguntas.textContent = "Fim da aventura!";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
